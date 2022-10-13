@@ -4,23 +4,26 @@ import {AffairType, FilterType} from '../HW2'
 import s from './Affairs.module.css'
 
 type AffairsPropsType = {
-    data: any // need to fix any
-    setFilter: any
-    deleteAffairCallback: any
+    data: Array<AffairType> // need to fix any
+    setFilter: (filter: FilterType) => void
+    deleteAffairCallback: (_id: number) => void
     filter: FilterType
 }
 
 function Affairs(props: AffairsPropsType) {
     const setAll = () => {
-        // need to fix
+        props.setFilter("all")
     }
     const setHigh = () => {
+        props.setFilter("high")
         // need to fix
     }
     const setMiddle = () => {
+        props.setFilter("middle")
         // need to fix
     }
     const setLow = () => {
+        props.setFilter("low")
         // need to fix
     }
 
@@ -38,7 +41,7 @@ function Affairs(props: AffairsPropsType) {
     ))
 
     return (
-        <div>
+        <div className={s.container}>
             <div className={s.buttonContainer}>
                 <button
                     id={'hw2-button-all'}

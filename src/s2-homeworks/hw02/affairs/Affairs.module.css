@@ -1,3 +1,7 @@
+.container{
+    margin-left: 70px;
+}
+
 .buttonContainer {
     display: flex;
     gap: 24px;
